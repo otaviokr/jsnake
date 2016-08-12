@@ -116,10 +116,8 @@ however, this is not in the scope of this project (for now!).
 	- [x] Merge branch snake to master
 	- [x] Merge branch apple to master
 	- [x] Merge the updates from master to apple
-	- [ ] Create routine to have the snake eating the apple
+	- [x] Create routine to have the snake eating the apple and to grow whenever it gets an apple
 	- [ ] Merge to master
-	- [ ] Pull the updates from master to snake
-	- [ ] Create routine to have the snake growing as it eats the apple
 
 #### Iteration 07 - Score!
 	- [ ] Create branch score from snake
