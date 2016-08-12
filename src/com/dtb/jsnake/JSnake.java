@@ -31,7 +31,8 @@ public class JSnake implements ActionListener, KeyListener {
 	private int direction = DOWN;
 	private ArrayList<Point> positions;
 	private int snakeLength = 1;
-	
+	private int score = 0;
+
 	private Random random;
 	private Point apple;
 
@@ -92,11 +93,12 @@ public class JSnake implements ActionListener, KeyListener {
 			} else if (direction == RIGHT) {
 				position = new Point(head.x + SIZE, head.y);
 			}
-			
+
 			if (apple != null) {
 				if (head.getLocation().equals(apple.getLocation())) {
 					snakeLength++;
-					
+					score++;
+
 					spawnNewApple();
 				}
 			}
@@ -107,7 +109,7 @@ public class JSnake implements ActionListener, KeyListener {
 			}
 		}
 	}
-	
+
 	private void spawnNewApple() {
 		apple = new Point(random.nextInt((jFrame.getWidth() - SIZE) / SIZE) * SIZE,
 				random.nextInt((jFrame.getHeight() - SIZE) / SIZE) * SIZE);
@@ -149,6 +151,10 @@ public class JSnake implements ActionListener, KeyListener {
 
 	public Point getApple() {
 		return apple;
+	}
+
+	public int getScore() {
+		return score;
 	}
 }
 

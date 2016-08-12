@@ -120,10 +120,8 @@ however, this is not in the scope of this project (for now!).
 	- [x] Merge to master
 
 #### Iteration 07 - Score!
-	- [ ] Create branch score from snake
-	- [ ] Whenever the snake eats an apple it gets 1 point
-	- [ ] Display the current points on the top-left corner of the screen
-	- [ ] EXTRA: Keep hi-score until the program is finished!
+	- [x] Create branch score from master
+	- [x] Whenever the snake eats an apple it gets 1 point, and display the score on screen
 
 #### Iteration 08 - Let's put an end to this!
 	- [ ] Create branch lose-criteria from master
@@ -143,3 +141,4 @@ however, this is not in the scope of this project (for now!).
 	- [ ] Put a nice screen "You lose", wait for the user to press a button to restart
 	- [ ] Some sounds are nice: nom-nom-nom, game over, man!, some background music
 	- [ ] Snake speeds up as it grows
+	- [ ] Keep hi-score until the program is finished!
