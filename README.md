@@ -120,26 +120,24 @@ however, this is not in the scope of this project (for now!).
 	- [x] Merge to master
 
 #### Iteration 07 - Score!
-	- [ ] Create branch score from snake
-	- [ ] Whenever the snake eats an apple it gets 1 point
-	- [ ] Display the current points on the top-left corner of the screen
-	- [ ] EXTRA: Keep hi-score until the program is finished!
+	- [x] Create branch score from master
+	- [x] Whenever the snake eats an apple it gets 1 point, and display the score on screen
 
 #### Iteration 08 - Let's put an end to this!
 	- [x] Create branch lose-criteria from master
 	- [x] If the snake hits any wall, you lose
-	
-		Just check every iteration if the head of the snake hits (tries to go over) a wall. Since the rest of the body of the 
+
+		Just check every iteration if the head of the snake hits (tries to go over) a wall. Since the rest of the body of the
 		snake just goes where the head has been, there's no need to worry about it, just about the head.
-		
+
 	- [x] If the snake hits itself, you lose
-	
+
 		Again, you just need to check if the head hits any part of the body.
-		
+
 	- [x] When you lose, the snake returns to size 1, in the original position with a resetted score
 
 #### Iteration 09 - All become one
-	- [ ] Merge everything back to master
+	- [x] Merge everything back to master
 
 #### Iteration 10 - Some eye-candies
 	- [ ] Put texture to snake, apple and points
@@ -150,3 +148,4 @@ however, this is not in the scope of this project (for now!).
 	- [ ] Put a nice screen "You lose", wait for the user to press a button to restart
 	- [ ] Some sounds are nice: nom-nom-nom, game over, man!, some background music
 	- [ ] Snake speeds up as it grows
+	- [ ] Keep hi-score until the program is finished!

@@ -31,5 +31,9 @@ public class RenderingPanel extends JPanel {
 				g.fillRect(entry.x, entry.y, JSnake.SIZE, JSnake.SIZE);
 			}
 		}
+
+		// Score
+		g.setColor(Color.YELLOW);
+		g.drawString(String.valueOf(snake.getScore()), 0, 10);
 	}
 }
