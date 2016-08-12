@@ -75,8 +75,13 @@ however, this is not in the scope of this project (for now!).
 	- [ ] Keep the snake size to only 1 "square"
 
 #### Iteration 05 - An apple a day keeps the snake away!?
-	- [ ] Create branch appel from master
-	- [ ] Create the apple
+	- [x] Create branch apple from master
+
+	- [x] Create the apple
+		The apple is just a red square, for now. But, because we're branching from main, we'll need to create the extended
+		class from JPanel again. You don't have to create the exactly same class - it is actually good if they are different
+		because then we can practice the merging.
+
 	- [ ] Make it appears in a random position on screen
 
 #### Iteration 06 - Why would a snake eat an apple?
