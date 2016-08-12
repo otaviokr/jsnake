@@ -84,8 +84,12 @@ however, this is not in the scope of this project (for now!).
 		coordinates. The speed and direction is not important for now.
 
 #### Iteration 03 - The snake bows to my will
-	- [ ] Create branch user-commands from snake
-	- [ ] Handle user commands
+	- [x] Create branch user-commands from snake
+
+	- [x] Handle user commands
+
+		The user need to be able to press a key and change the direction of the snake. To accomplish that, we make the class a Key
+		Listener and make the JFrame listen to key events.
 
 #### Iteration 04 - Bigger is better
 	- [x] Move back to branch snake
@@ -101,9 +105,9 @@ however, this is not in the scope of this project (for now!).
 	- [ ] Make it appears in a random position on screen
 
 #### Iteration 06 - Why would a snake eat an apple?
-	- [ ] Merge branch apple to master
-	- [ ] Merge branch user-commands to snake
+	- [x] Merge branch user-commands to snake
 	- [ ] Merge branch snake to master
+	- [ ] Merge branch apple to master
 	- [ ] Pull the updates from master to apple
 	- [ ] Create routine to have the snake eating the apple
 	- [ ] Merge to master
