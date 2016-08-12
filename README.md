@@ -132,7 +132,10 @@ however, this is not in the scope of this project (for now!).
 		Just check every iteration if the head of the snake hits (tries to go over) a wall. Since the rest of the body of the 
 		snake just goes where the head has been, there's no need to worry about it, just about the head.
 		
-	- [ ] If the snake hits itself, you lose
+	- [x] If the snake hits itself, you lose
+	
+		Again, you just need to check if the head hits any part of the body.
+		
 	- [ ] When you lose, the snake returns to size 1, in the original position with a resetted score
 
 #### Iteration 09 - All become one
