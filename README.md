@@ -61,18 +61,43 @@ however, this is not in the scope of this project (for now!).
 		The JFrame is the class that defines the windows where we can present the game. Very simple, but we are just getting started!
 
 #### Iteration 02 - Hey, a snake!
-	- [ ] Create branch snake from master
-	- [ ] Create the repaint function
-	- [ ] Add the snake to JFrame
-	- [ ] Make the snake walk (don't worry about its size for now)
+	- [x] Create branch snake from master
+
+		To create a branch, you just have to be in the branch that you want to be the parent branch and run
+		`git checkout -b my-new-branch-name. To switch between branches, run `git checkout my-other-branch-name` - without
+		the -b option!
+
+	- [x] Add the snake to JFrame
+
+		First, let's create our version of a JPanel so we can control the painting methods to say what, where and when we want to
+		paint. Inside of eat, we pick a color and then draw a filled rectangle (filled with the color previously chose).
+		Now, you have to add a new object of this JPanel extended class you created to the JFrame.
+
+	- [x] Make the snake walk (don't worry about its size for now)
+
+		Like the animation principle, to have the snake moving around it just mean to draw a picture where the snake is at (x, y)
+		and the draw another picture where it is at (x+a, y+b). So we need some kind of loop, where the image will be drawn at each
+		iteration, and the snake will be in a different position.
+
+		We could use a loop-while or loop-for, but those are too fast and we would need to put threads to sleep and other controls;
+		instead, we will activate a timer, and when the time runs out, the screen will update itself and also update the snake
+		coordinates. The speed and direction is not important for now.
 
 #### Iteration 03 - The snake bows to my will
-	- [ ] Create branch user-commands from snake
-	- [ ] Handle user commands
+	- [x] Create branch user-commands from snake
 
-#### Iteration 04 - We love only the tiny things
-	- [ ] Move back to branch snake
-	- [ ] Keep the snake size to only 1 "square"
+	- [x] Handle user commands
+
+		The user need to be able to press a key and change the direction of the snake. To accomplish that, we make the class a Key
+		Listener and make the JFrame listen to key events.
+
+#### Iteration 04 - Bigger is better
+	- [x] Move back to branch snake
+
+	- [x] Make the snake grows as it moves, but not more than 10 times
+
+		This will be very useful when the apple feature is ready and the snake will grow as it eats them. The idea is just to
+		keep the last 10 positions the snake had and draw them all.
 
 #### Iteration 05 - An apple a day keeps the snake away!?
 	- [ ] Create branch appel from master
@@ -80,9 +105,9 @@ however, this is not in the scope of this project (for now!).
 	- [ ] Make it appears in a random position on screen
 
 #### Iteration 06 - Why would a snake eat an apple?
+	- [x] Merge branch user-commands to snake
+	- [x] Merge branch snake to master
 	- [ ] Merge branch apple to master
-	- [ ] Merge branch user-commands to snake
-	- [ ] Merge branch snake to master
 	- [ ] Pull the updates from master to apple
 	- [ ] Create routine to have the snake eating the apple
 	- [ ] Merge to master
