@@ -3,6 +3,7 @@ package com.dtb.jsnake;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.Timer;
@@ -18,7 +19,7 @@ public class JSnake implements ActionListener {
 
 	private JFrame jFrame;
 	private RenderingPanel renderingPanel;
-	private Point position;
+	private ArrayList<Point> positions;
 	private Timer timer;
 	private int delay = 0;
 
@@ -37,7 +38,8 @@ public class JSnake implements ActionListener {
 	 * Ordinary constructor. Nothing unusual here...
 	 */
 	public JSnake() {
-		position = new Point(0, 0);
+		positions = new ArrayList<Point>();
+		positions.add(new Point(0, 0));
 
 		renderingPanel = new RenderingPanel();
 
@@ -58,12 +60,15 @@ public class JSnake implements ActionListener {
 		delay++;
 
 		if (delay % 20 == 0) {
-			position = new Point(position.x + SIZE, position.y + SIZE);
+			positions.add(new Point(positions.get(positions.size() - 1).x + SIZE, positions.get(positions.size() - 1).y + SIZE));
+			if (positions.size() > 10) {
+				positions.remove(0);
+			}
 		}
 
 	}
 
-	public Point getPosition() {
-		return position;
+	public Point[] getPositions() {
+		return positions.toArray(new Point[]{});
 	}
 }

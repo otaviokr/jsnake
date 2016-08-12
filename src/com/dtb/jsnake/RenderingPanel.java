@@ -2,6 +2,7 @@ package com.dtb.jsnake;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 
 import javax.swing.JPanel;
 
@@ -20,6 +21,8 @@ public class RenderingPanel extends JPanel {
 		// This is our snake... and I am serious.
 		JSnake snake = JSnake.jSnake;
 		g.setColor(Color.GREEN);
-		g.fillRect(snake.getPosition().x, snake.getPosition().y, JSnake.SIZE, JSnake.SIZE);
+		for (Point entry : snake.getPositions()) {
+			g.fillRect(entry.x, entry.y, JSnake.SIZE, JSnake.SIZE);
+		}
 	}
 }

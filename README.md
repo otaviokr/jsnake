@@ -87,9 +87,13 @@ however, this is not in the scope of this project (for now!).
 	- [ ] Create branch user-commands from snake
 	- [ ] Handle user commands
 
-#### Iteration 04 - We love only the tiny things
-	- [ ] Move back to branch snake
-	- [ ] Keep the snake size to only 1 "square"
+#### Iteration 04 - Bigger is better
+	- [x] Move back to branch snake
+
+	- [x] Make the snake grows as it moves, but not more than 10 times
+
+		This will be very useful when the apple feature is ready and the snake will grow as it eats them. The idea is just to
+		keep the last 10 positions the snake had and draw them all.
 
 #### Iteration 05 - An apple a day keeps the snake away!?
 	- [ ] Create branch appel from master
