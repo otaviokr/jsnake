@@ -61,9 +61,18 @@ however, this is not in the scope of this project (for now!).
 		The JFrame is the class that defines the windows where we can present the game. Very simple, but we are just getting started!
 
 #### Iteration 02 - Hey, a snake!
-	- [ ] Create branch snake from master
-	- [ ] Create the repaint function
-	- [ ] Add the snake to JFrame
+	- [x] Create branch snake from master
+
+		To create a branch, you just have to be in the branch that you want to be the parent branch and run
+		`git checkout -b my-new-branch-name. To switch between branches, run `git checkout my-other-branch-name` - without
+		the -b option!
+
+	- [x] Add the snake to JFrame
+
+		First, let's create our version of a JPanel so we can control the painting methods to say what, where and when we want to
+		paint. Inside of eat, we pick a color and then draw a filled rectangle (filled with the color previously chose).
+		Now, you have to add a new object of this JPanel extended class you created to the JFrame.
+
 	- [ ] Make the snake walk (don't worry about its size for now)
 
 #### Iteration 03 - The snake bows to my will
