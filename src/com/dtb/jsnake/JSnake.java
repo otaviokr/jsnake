@@ -26,12 +26,13 @@ public class JSnake implements ActionListener, KeyListener {
 	private RenderingPanel renderingPanel;
 	private Timer timer;
 	private int delay = 0;
+	private boolean over = false;
 
 	public static JSnake jSnake;
 	private int direction = DOWN;
 	private ArrayList<Point> positions;
 	private int snakeLength = 1;
-	
+
 	private Random random;
 	private Point apple;
 
@@ -83,20 +84,44 @@ public class JSnake implements ActionListener, KeyListener {
 			Point position = null;
 			Point head = positions.get(positions.size() - 1);
 
-			if (direction == UP) {
-				position = new Point(head.x, head.y - SIZE);
-			} else if (direction == DOWN) {
-				position = new Point(head.x, head.y + SIZE);
-			} else if (direction == LEFT) {
-				position = new Point(head.x - SIZE, head.y);
-			} else if (direction == RIGHT) {
-				position = new Point(head.x + SIZE, head.y);
+			switch(direction) {
+			case UP:
+				if (head.y > 0) {
+					position = new Point(head.x, head.y - SIZE);
+				} else {
+					over = true;
+				}
+				break;
+
+			case DOWN:
+				if (head.y + SIZE < jFrame.getHeight() - SIZE) {
+					position = new Point(head.x, head.y + SIZE);
+				} else {
+					over = true;
+				}
+				break;
+
+			case LEFT:
+				if (head.x > 0) {
+					position = new Point(head.x - SIZE, head.y);
+				} else {
+					over = true;
+				}
+				break;
+
+			case RIGHT:
+				if (head.x + SIZE < jFrame.getWidth() - SIZE) {
+					position = new Point(head.x + SIZE, head.y);
+				} else {
+					over = true;
+				}
+				break;
 			}
-			
+
 			if (apple != null) {
 				if (head.getLocation().equals(apple.getLocation())) {
 					snakeLength++;
-					
+
 					spawnNewApple();
 				}
 			}
@@ -105,9 +130,11 @@ public class JSnake implements ActionListener, KeyListener {
 			if (positions.size() > snakeLength) {
 				positions.remove(0);
 			}
+		} else if (over) {
+			System.exit(0);
 		}
 	}
-	
+
 	private void spawnNewApple() {
 		apple = new Point(random.nextInt((jFrame.getWidth() - SIZE) / SIZE) * SIZE,
 				random.nextInt((jFrame.getHeight() - SIZE) / SIZE) * SIZE);

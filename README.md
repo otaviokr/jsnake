@@ -126,8 +126,12 @@ however, this is not in the scope of this project (for now!).
 	- [ ] EXTRA: Keep hi-score until the program is finished!
 
 #### Iteration 08 - Let's put an end to this!
-	- [ ] Create branch lose-criteria from master
-	- [ ] If the snake hits any wall, you lose
+	- [x] Create branch lose-criteria from master
+	- [x] If the snake hits any wall, you lose
+	
+		Just check every iteration if the head of the snake hits (tries to go over) a wall. Since the rest of the body of the 
+		snake just goes where the head has been, there's no need to worry about it, just about the head.
+		
 	- [ ] If the snake hits itself, you lose
 	- [ ] When you lose, the snake returns to size 1, in the original position with a resetted score
 
