@@ -56,7 +56,9 @@ however, this is not in the scope of this project (for now!).
 		the previous step.
 
 #### Iteration 01 - Window spotted
-	- [ ] Create the JFrame, with a title
+	- [x] Create the JFrame, with a title
+
+		The JFrame is the class that defines the windows where we can present the game. Very simple, but we are just getting started!
 
 #### Iteration 02 - Hey, a snake!
 	- [ ] Create branch snake from master
