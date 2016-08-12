@@ -27,7 +27,9 @@ public class RenderingPanel extends JPanel {
 		// This is our snake... and I am serious.
 		g.setColor(Color.GREEN);
 		for (Point entry : snake.getPositions()) {
-			g.fillRect(entry.x, entry.y, JSnake.SIZE, JSnake.SIZE);
+			if (entry != null) {
+				g.fillRect(entry.x, entry.y, JSnake.SIZE, JSnake.SIZE);
+			}
 		}
 	}
 }
