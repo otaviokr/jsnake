@@ -24,13 +24,14 @@ public class JSnake implements ActionListener, KeyListener {
 
 	private JFrame jFrame;
 	private RenderingPanel renderingPanel;
-	private ArrayList<Point> positions;
 	private Timer timer;
 	private int delay = 0;
-	private int direction = DOWN;
 
 	public static JSnake jSnake;
-
+	private int direction = DOWN;
+	private ArrayList<Point> positions;
+	private int snakeLength = 1;
+	
 	private Random random;
 	private Point apple;
 
@@ -64,8 +65,7 @@ public class JSnake implements ActionListener, KeyListener {
 		//	The dimension taken in consideration is the size of the frame, minus the size of the apple, otherwise, it could be
 		//	placed outside the frame. This value is divided by the size and the result is multiplied, so we can put it in a
 		// "fake grid", to be perfectly aligned with the snake when it eats the apple.
-		apple = new Point(random.nextInt((jFrame.getWidth() - SIZE) / SIZE) * SIZE,
-				random.nextInt((jFrame.getHeight() - SIZE) / SIZE) * SIZE);
+		spawnNewApple();
 
 		jFrame.setVisible(true);
 
@@ -92,12 +92,25 @@ public class JSnake implements ActionListener, KeyListener {
 			} else if (direction == RIGHT) {
 				position = new Point(head.x + SIZE, head.y);
 			}
+			
+			if (apple != null) {
+				if (head.getLocation().equals(apple.getLocation())) {
+					snakeLength++;
+					
+					spawnNewApple();
+				}
+			}
 
 			positions.add(position);
-			if (positions.size() > 10) {
+			if (positions.size() > snakeLength) {
 				positions.remove(0);
 			}
 		}
+	}
+	
+	private void spawnNewApple() {
+		apple = new Point(random.nextInt((jFrame.getWidth() - SIZE) / SIZE) * SIZE,
+				random.nextInt((jFrame.getHeight() - SIZE) / SIZE) * SIZE);
 	}
 
 	@Override
