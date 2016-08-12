@@ -1,9 +1,16 @@
 package com.dtb.jsnake;
 
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 /**
  * This is the main class, where everything is created and started.
@@ -11,14 +18,21 @@ import javax.swing.JFrame;
  * @author otavio.krambeck
  *
  */
-public class JSnake {
+public class JSnake implements ActionListener, KeyListener {
+	private static final int UP = 1, DOWN = 2, LEFT = 3, RIGHT = 4;
 	public static final int SIZE = 15;
+
 	private JFrame jFrame;
+	private RenderingPanel renderingPanel;
+	private ArrayList<Point> positions;
+	private Timer timer;
+	private int delay = 0;
+	private int direction = DOWN;
+
+	public static JSnake jSnake;
 
 	private Random random;
 	private Point apple;
-
-	public static JSnake snake;
 
 	/**
 	 * Mandatory main method.
@@ -26,19 +40,25 @@ public class JSnake {
 	 * @param args Nothing is really expected; just ignore it.
 	 */
 	public static void main(String[] args) {
-		snake = new JSnake();
+		jSnake = new JSnake();
 	}
 
 	/**
 	 * Ordinary constructor. Nothing unusual here...
 	 */
 	public JSnake() {
+		positions = new ArrayList<Point>();
+		positions.add(new Point(0, 0));
+
+		renderingPanel = new RenderingPanel();
+
 		random = new Random(System.currentTimeMillis());
 
 		jFrame = new JFrame("JSnake!!!");
-		jFrame.setSize(350, 350);			// Although this is not really mandatory, there's not much to do in a 0x0 window...
-		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			// This is not mandatory, but it is best practice :)
-		jFrame.add(new RenderingPanel());
+		jFrame.setSize(350, 350);
+		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jFrame.add(renderingPanel);
+		jFrame.addKeyListener(this);
 
 		// A brief explanation in the calculation of X and Y:
 		//	The dimension taken in consideration is the size of the frame, minus the size of the apple, otherwise, it could be
@@ -48,9 +68,74 @@ public class JSnake {
 				random.nextInt((jFrame.getHeight() - SIZE) / SIZE) * SIZE);
 
 		jFrame.setVisible(true);
+
+		timer = new Timer(10, this);
+		timer.start();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		renderingPanel.repaint();
+
+		delay++;
+
+		if (delay % 20 == 0) {
+			Point position = null;
+			Point head = positions.get(positions.size() - 1);
+
+			if (direction == UP) {
+				position = new Point(head.x, head.y - SIZE);
+			} else if (direction == DOWN) {
+				position = new Point(head.x, head.y + SIZE);
+			} else if (direction == LEFT) {
+				position = new Point(head.x - SIZE, head.y);
+			} else if (direction == RIGHT) {
+				position = new Point(head.x + SIZE, head.y);
+			}
+
+			positions.add(position);
+			if (positions.size() > 10) {
+				positions.remove(0);
+			}
+		}
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		switch(e.getKeyCode()) {
+		case KeyEvent.VK_W:
+			direction = UP;
+			break;
+		case KeyEvent.VK_S:
+			direction = DOWN;
+			break;
+		case KeyEvent.VK_A:
+			direction = LEFT;
+			break;
+		case KeyEvent.VK_D:
+			direction = RIGHT;
+			break;
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public Point[] getPositions() {
+		return positions.toArray(new Point[]{});
 	}
 
 	public Point getApple() {
 		return apple;
 	}
 }
+
