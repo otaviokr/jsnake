@@ -84,8 +84,12 @@ however, this is not in the scope of this project (for now!).
 		coordinates. The speed and direction is not important for now.
 
 #### Iteration 03 - The snake bows to my will
-	- [ ] Create branch user-commands from snake
-	- [ ] Handle user commands
+	- [x] Create branch user-commands from snake
+
+	- [x] Handle user commands
+
+		The user need to be able to press a key and change the direction of the snake. To accomplish that, we make the class a Key
+		Listener and make the JFrame listen to key events.
 
 #### Iteration 04 - We love only the tiny things
 	- [ ] Move back to branch snake
