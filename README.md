@@ -73,7 +73,15 @@ however, this is not in the scope of this project (for now!).
 		paint. Inside of eat, we pick a color and then draw a filled rectangle (filled with the color previously chose).
 		Now, you have to add a new object of this JPanel extended class you created to the JFrame.
 
-	- [ ] Make the snake walk (don't worry about its size for now)
+	- [x] Make the snake walk (don't worry about its size for now)
+
+		Like the animation principle, to have the snake moving around it just mean to draw a picture where the snake is at (x, y)
+		and the draw another picture where it is at (x+a, y+b). So we need some kind of loop, where the image will be drawn at each
+		iteration, and the snake will be in a different position.
+
+		We could use a loop-while or loop-for, but those are too fast and we would need to put threads to sleep and other controls;
+		instead, we will activate a timer, and when the time runs out, the screen will update itself and also update the snake
+		coordinates. The speed and direction is not important for now.
 
 #### Iteration 03 - The snake bows to my will
 	- [ ] Create branch user-commands from snake

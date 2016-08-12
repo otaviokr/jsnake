@@ -16,9 +16,10 @@ public class RenderingPanel extends JPanel {
 		// Background color
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, 0, super.getWidth(), super.getHeight());
-		
+
 		// This is our snake... and I am serious.
+		JSnake snake = JSnake.jSnake;
 		g.setColor(Color.GREEN);
-		g.fillRect(0, 0, 15, 15);
+		g.fillRect(snake.getPosition().x, snake.getPosition().y, JSnake.SIZE, JSnake.SIZE);
 	}
 }
