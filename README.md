@@ -136,7 +136,7 @@ however, this is not in the scope of this project (for now!).
 	
 		Again, you just need to check if the head hits any part of the body.
 		
-	- [ ] When you lose, the snake returns to size 1, in the original position with a resetted score
+	- [x] When you lose, the snake returns to size 1, in the original position with a resetted score
 
 #### Iteration 09 - All become one
 	- [ ] Merge everything back to master

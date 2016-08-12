@@ -117,8 +117,10 @@ public class JSnake implements ActionListener, KeyListener {
 				}
 				break;
 			}
-			
-			over = snakeCollided(position);
+
+			if (!over) {
+				over = snakeCollided(position);
+			}
 
 			if (apple != null) {
 				if (head.getLocation().equals(apple.getLocation())) {
@@ -133,7 +135,13 @@ public class JSnake implements ActionListener, KeyListener {
 				positions.remove(0);
 			}
 		} else if (over) {
-			System.exit(0);
+			// Reset the snake configuration to start over.
+			positions.clear();
+			positions.add(new Point(0, 0));
+			over = false;
+			direction = DOWN;
+			snakeLength = 1;
+			spawnNewApple();
 		}
 	}
 
@@ -141,10 +149,12 @@ public class JSnake implements ActionListener, KeyListener {
 		apple = new Point(random.nextInt((jFrame.getWidth() - SIZE) / SIZE) * SIZE,
 				random.nextInt((jFrame.getHeight() - SIZE) / SIZE) * SIZE);
 	}
-	
+
 	private boolean snakeCollided(Point p) {
 		for (Point body : positions) {
-			return p.getLocation().equals(body.getLocation());
+			if (p.getLocation().equals(body.getLocation())) {
+				return true;
+			}
 		}
 		return false;
 	}
