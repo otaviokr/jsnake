@@ -10,9 +10,11 @@ public class RenderingPanel extends JPanel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		
+
+		JSnake snake = JSnake.snake;
+
 		// Look, a square apple!
 		g.setColor(Color.RED);
-		g.fillRect(50, 50, 10, 10);
+		g.fillRect(snake.getApple().x, snake.getApple().y, JSnake.SIZE, JSnake.SIZE);
 	}
 }

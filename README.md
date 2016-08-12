@@ -82,7 +82,9 @@ however, this is not in the scope of this project (for now!).
 		class from JPanel again. You don't have to create the exactly same class - it is actually good if they are different
 		because then we can practice the merging.
 
-	- [ ] Make it appears in a random position on screen
+	- [x] Make it appears in a random position on screen
+
+		Use the Random class to make the apple appear in a random position, because that's how the game works.
 
 #### Iteration 06 - Why would a snake eat an apple?
 	- [ ] Merge branch apple to master
@@ -94,22 +96,22 @@ however, this is not in the scope of this project (for now!).
 	- [ ] Pull the updates from master to snake
 	- [ ] Create routine to have the snake growing as it eats the apple
 
-#### Iteration 06 - Score!
+#### Iteration 07 - Score!
 	- [ ] Create branch score from snake
 	- [ ] Whenever the snake eats an apple it gets 1 point
 	- [ ] Display the current points on the top-left corner of the screen
 	- [ ] EXTRA: Keep hi-score until the program is finished!
 
-#### Iteration 07 - Let's put an end to this!
+#### Iteration 08 - Let's put an end to this!
 	- [ ] Create branch lose-criteria from master
 	- [ ] If the snake hits any wall, you lose
 	- [ ] If the snake hits itself, you lose
 	- [ ] When you lose, the snake returns to size 1, in the original position with a resetted score
 
-#### Iteration 08 - All become one
+#### Iteration 09 - All become one
 	- [ ] Merge everything back to master
 
-#### Iteration 09 - Some eye-candies
+#### Iteration 10 - Some eye-candies
 	- [ ] Put texture to snake, apple and points
 
 #### Extra-teration - Minor glitches and improvements
