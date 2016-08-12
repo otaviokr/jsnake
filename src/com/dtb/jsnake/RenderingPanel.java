@@ -14,12 +14,17 @@ public class RenderingPanel extends JPanel {
 
 		// Everything we want to render in the window should be here.
 
+		JSnake snake = JSnake.jSnake;
+
 		// Background color
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, 0, super.getWidth(), super.getHeight());
 
+		// Look, a square apple!
+		g.setColor(Color.RED);
+		g.fillRect(snake.getApple().x, snake.getApple().y, JSnake.SIZE, JSnake.SIZE);
+
 		// This is our snake... and I am serious.
-		JSnake snake = JSnake.jSnake;
 		g.setColor(Color.GREEN);
 		for (Point entry : snake.getPositions()) {
 			g.fillRect(entry.x, entry.y, JSnake.SIZE, JSnake.SIZE);
