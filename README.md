@@ -140,7 +140,17 @@ however, this is not in the scope of this project (for now!).
 	- [x] Merge everything back to master
 
 #### Iteration 10 - Some eye-candies
-	- [ ] Put texture to snake, apple and points
+	- [x] Create branch textures from master
+
+	- [x] Put texture to snake, apple and points
+
+		I created some amazing sprites for the snake and the apple. Notice that the body of the snake is narrower than the
+		size of the "grid", so when moving sideways, the snake looks "striped"; this could be easily solved by rotating the
+		sprites according to the snake movement, but I'm not interested in that right now - but feel free to do it on your own!
+
+		The score is not actually using sprites - I could, but the idea is the same applied to the snake; instead, I just
+		played a little with AWT's font class (if you don't have the same font as I do installed, you may see the numbers
+		rendered with the default font...).
 
 #### Extra-teration - Minor glitches and improvements
 	- [ ] The apple cannot appear on the snake
